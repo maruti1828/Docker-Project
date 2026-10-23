@@ -107,6 +107,14 @@ def health():
         )
 
 
+@app.get("/version")
+def get_version():
+    return {
+        "application": "ShopPulse",
+        "version": "1.1.0"
+    }
+
+
 @app.post("/orders", response_model=OrderResponse, status_code=201)
 def create_order(payload: OrderCreate, db: Session = Depends(get_db)):
     order = Order(
