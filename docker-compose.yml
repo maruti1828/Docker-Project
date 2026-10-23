@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
 
   api:
-    build: .
+    image: ghcr.io/maruti1828/shoppulse:latest
     environment:
       DATABASE_URL: postgresql+psycopg://shoppulse:localdev123@db:5432/shoppulse
     ports:
